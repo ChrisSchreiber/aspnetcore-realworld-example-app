@@ -7,3 +7,11 @@ services:
      - ASPNETCORE_Conduit_ConnectionString=${ASPNETCORE_Conduit_ConnectionString}
     ports:
      - "5000:5000"
+    depends_on:
+     - sqlserver
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+     - ACCEPT_EULA=y
+     - SA_PASSWORD=StrongPassword(!)
+     - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
