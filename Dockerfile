@@ -7,7 +7,8 @@ RUN dotnet run -p build/build.csproj
 
 #runtime container
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.3-alpine
-
+RUN apk add icu-libs
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 COPY --from=build /build/publish /app
 WORKDIR /app
 

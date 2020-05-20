@@ -21,7 +21,7 @@ namespace Conduit
 {
     public class Startup
     {
-        public const string DEFAULT_DATABASE_CONNECTIONSTRING = "Data Source=msdb";
+        public const string DEFAULT_DATABASE_CONNECTIONSTRING = "server=tcp:sqlserver;User ID=SA;Password=StrongPassword(!);";
         public const string DEFAULT_DATABASE_PROVIDER = "sqlserver";
 
         private readonly IConfiguration _config;
